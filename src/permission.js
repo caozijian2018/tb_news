@@ -8,6 +8,7 @@ import allreques from "./api/all_request"
 NProgress.configure({ showSpinner: false }) 
 router.beforeEach((to, from, next) => {
   var haslogin = hasLogin();
+  console.log(haslogin)
   if(to.name=="login"){
     if(!haslogin){
       next();

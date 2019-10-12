@@ -95,14 +95,15 @@
         }
       },
       handleLogin() {
-        localStorage.sp_user_token = 1;
-        localStorage.sp_user_id = 1;
-        localStorage.sp_user_type = 'sp';
-        window.localStorage.company = '1';
-        initUsers();
-        this.$router.push({
-          name: 'dashboard'
-        });
+        if(this.username == 'admin' && this.password == "testbird"){
+          localStorage.sp_user_token = 1;
+          localStorage.sp_user_id = 1;
+          localStorage.sp_user_type = 'sp';
+          window.localStorage.company = '1';
+          initUsers();
+          this.$router.push({
+            name: 'dashboard'
+          });
         // this.$request_any('login', 'post', {
         //   username: this.username,
         //   password: this.password
@@ -116,6 +117,7 @@
         //     name: 'dashboard'
         //   });
         // });
+        }
       },
     },
   }
