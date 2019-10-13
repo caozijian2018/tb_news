@@ -47,7 +47,7 @@ module.exports = {
     cssSourceMap: false,
     proxyTable: {
       '/backend': {
-        target: process.env.NODE_ENV == 'development' ? "http://localhost:8000/backend" : "http://106.52.237.64:12000/backend",
+        target: process.env.NODE_ENV == 'development' ? "http://106.52.237.64:12000/backend" : "http://106.52.237.64:12000/backend",
         // target: process.env.NODE_ENV == 'development' ? "http://192.168.31.43:8000/backend" : "http://0.0.0.0:8000/backend",
         changeOrigin: true,
         pathRewrite: {

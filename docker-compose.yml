@@ -1,0 +1,33 @@
+# https://docs.docker.com/compose/compose-file/
+version: '3.7'
+networks:
+  app-tier:
+    driver: bridge
+
+services:
+# caocaocao/tracker
+  tracker:
+    image: 'caocaocao/news_tb'
+    container_name: 'news_tb'
+    user: root
+    working_dir: "/app/tb_news"
+    ports:
+      - 12345:9999
+    volumes:
+      - "./:/app/tb_news"
+    environment:
+      # ALLOW_EMPTY_PASSWORD is recommended only for development.
+      - WEB_BRANCH=master
+      - WEB_PRODORDEV=build
+      - HOST=0.0.0.0
+      - WEB_NODE_MODULES_IS_CHANGE=true
+      - WEB_PROJECT_NAME=tb_news
+      - WEB_GIT_ADDR=https://github.com/caozijian2018/tb_news.git
+      - WEB_NEED_NPM_REGISTRY=true
+      - IS_DOCKER=true
+    command: 
+        - /bin/sh
+        - -c
+        - |
+          sh deploy_auto.sh
+          tail -f /dev/null
