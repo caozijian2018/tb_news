@@ -55,11 +55,27 @@ export default {
         };
     },
     methods: {
+        vaify() {
+            if (!this.validate_input.check(this.title, "has_val")) {
+                return "title can`t be null";
+            }
+            if (!this.validate_input.check(this.author, "has_val")) {
+                return "author can`t be null";
+            }
+            if (!this.validate_input.check(this.innerhtml, "has_val")) {
+                return "innerhtml can`t be null";
+            }
+        },
         getHtml(v) {
             console.log(v);
             this.innerhtml = v;
         },
         Uphtml() {
+            var error_text = this.vaify();
+            if(error_text){
+                this.$msg(error_text)
+                return;
+            }
             var url = this.NewsObj ? `news/${this.NewsObj.id}/` : "news/"
             var type = this.NewsObj ? "patch" : "post";
             this.$request_any(url, type, {
@@ -83,11 +99,6 @@ export default {
                 this.title = '';
                 this.author = '';
                 this.innerhtml = '';
-            }
-        },
-        vaify() {
-            if (!this.validate_input.check(this.name, "has_val")) {
-                return "publisher name can`t be null";
             }
         },
         createOrupDataApp() {
