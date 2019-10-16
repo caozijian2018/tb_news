@@ -66,7 +66,7 @@ export default {
             }
         },
         UpImgs() {
-            let fmData = new FormData();
+            var fmData = new FormData();
             var error_text = this.vaify()
             if (error_text){
                 this.$msg(error_text)
