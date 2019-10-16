@@ -8,22 +8,14 @@ const authredirect = r => require.ensure([], () => r(require('@/views/login/auth
 const _404 = r => require.ensure([], () => r(require('@/views/errorPage/404')));
 const _401 = r => require.ensure([], () => r(require('@/views/errorPage/401')));
 const Layout = r => require.ensure([], () => r(require('@/views/layout/Layout')));
-
 const dashboard = r => require.ensure([], () => r(require('@/views/dashboard/index')));
-const userlist = r => require.ensure([], () => r(require('@/views/userlist/index')));
-
-
-
-const change_password = r => require.ensure([], () => r(require('@/views/change_password/index')));
-
-
 // dashboard
 export const constantRouterMap = [{
-  path: '/login',
-  name: "login",
-  component: login,
-  hidden: true
-},
+    path: '/login',
+    name: "login",
+    component: login,
+    hidden: true
+  },
   {
     path: '/authredirect',
     name: "authredirect",
@@ -66,24 +58,36 @@ export const constantRouterMap = [{
     ]
   },
   {
-    path: '/test',
+    path: '/news',
     component: Layout,
     redirect: 'test',
     meta: {
-      title: 'test',
+      title: 'news',
       icon: 'list'
     },
-    children: [{
-      path: 'test',
-      component: () =>
-        import('@/views/atest'),
-      name: 'phone',
-      meta: {
-        allow: "sp",
-        title: 'test',
-        icon: 'nested'
+    children: [
+      {
+        path: 'imgs',
+        component: () =>
+          import('@/views/news_img'),
+        name: 'img',
+        meta: {
+          allow: "sp",
+          title: 'img',
+          icon: 'nested'
+        }
+      },
+      {
+        path: 'news',
+        component: () =>
+          import('@/views/news_text'),
+        name: 'news',
+        meta: {
+          allow: "sp",
+          title: 'html',
+          icon: 'nested'
+        }
       }
-    }
     ]
   },
   {

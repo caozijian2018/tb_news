@@ -8,6 +8,7 @@ import allreques from "./api/all_request"
 NProgress.configure({ showSpinner: false }) 
 router.beforeEach((to, from, next) => {
   var haslogin = hasLogin();
+  console.log(haslogin+"Xxxxxxx")
   console.log(haslogin)
   if(to.name=="login"){
     if(!haslogin){
@@ -21,11 +22,11 @@ router.beforeEach((to, from, next) => {
     if(!haslogin){
       next({path:"/login"});
     }else{
-      var is_sp = localStorage.sp_user_type == 1;
-      if(!is_sp && to.meta.allow=="sp"){
-        next({name:"notfound"})
-        return;
-      }
+      // var is_sp = localStorage.sp_user_type == 1;
+      // if(!is_sp && to.meta.allow=="sp"){
+      //   next({name:"notfound"})
+      //   return;
+      // }
       next()
     }
 }

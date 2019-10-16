@@ -10,7 +10,7 @@ import store from './store'
 import i18n from './lang' // Internationalization
 import './icons' // icon
 import './errorLog'// error log
-// import './permission' // permission control
+import './permission' // permission control
 import router from './router'
 import './mock' // simulation data
 import './assets/css/global_css.css' // simulation data

@@ -1,27 +1,10 @@
 <template>
     <div>
-        <el-upload
-            :on-change="imgAdd"
-            :on-remove="imgRemove"
-            :file-list="file_list"
-            :auto-upload="false"
-            multiple
-            class="upload-demo filter-item"
-            action="http://3.210.32.132:19788/backend/api/v1/mt/resource/"
-        >
-            <el-button size="small" type="primary">click upload</el-button>
-        </el-upload>
-        <el-button
-            class="filter-item add_trak"
-            style="margin-left: 10px;"
-            @click="UpExcel()"
-            type="primary"
-        >Upload</el-button>
-        <div id="div3">
+        <div id="div3" ref="www">
 
         </div>
         <button @click="showHtml()">
-            显示内容
+            显示内容111
         </button>
         <button @click="Uphtml()">
             上传html
@@ -62,6 +45,8 @@ export default {
     methods: {
         showHtml(){
             alert(1)
+            console.log(document.querySelector("#div3"))
+            console.log(this.$refs.www)
             console.log(this.editor2.txt.html())
         },
         Uphtml() {

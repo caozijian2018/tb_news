@@ -100,23 +100,12 @@
           localStorage.sp_user_id = 1;
           localStorage.sp_user_type = 'sp';
           window.localStorage.company = '1';
-          initUsers();
+          // initUsers();
           this.$router.push({
             name: 'dashboard'
           });
-        // this.$request_any('login', 'post', {
-        //   username: this.username,
-        //   password: this.password
-        // }).then(res => {
-        //   localStorage.sp_user_token = res.data.token;
-        //   localStorage.sp_user_id = res.data.user_info.id;
-        //   localStorage.sp_user_type = res.data.user_info.user_type;
-        //   window.localStorage.company = res.data.user_info.company;
-        //   initUsers();
-        //   this.$router.push({
-        //     name: 'dashboard'
-        //   });
-        // });
+        }else{
+          this.$msg("username or password error")
         }
       },
     },

@@ -4,7 +4,7 @@
       <div class="">
         <!-- <span class="display_name">{{name}}</span> -->
         <!--<span style="font-size:22px;display:inline-block;">editor : {{roles_type}}</span>-->
-        <span style="font-size:22px;display:inline-block;">editor : Master你大爷 年末的娇娇</span>
+        <span style="font-size:22px;display:inline-block;">Welcome</span>
       </div>
     </div>
     <div>
