@@ -96,11 +96,11 @@
       },
       handleLogin() {
         if(this.username == 'admin' && this.password == "testbird"){
-          localStorage.sp_user_token = 1;
+          localStorage.sp_user_token = "wwwwwwwww";
           localStorage.sp_user_id = 1;
           localStorage.sp_user_type = 'sp';
           window.localStorage.company = '1';
-          // initUsers();
+          initUsers();
           this.$router.push({
             name: 'dashboard'
           });

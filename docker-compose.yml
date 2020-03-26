@@ -20,7 +20,6 @@ services:
       - WEB_BRANCH=master
       - WEB_PRODORDEV=dev
       - HOST=0.0.0.0
-      - WEB_NODE_MODULES_IS_CHANGE=true
       - WEB_PROJECT_NAME=tb_news
       - WEB_GIT_ADDR=https://github.com/caozijian2018/tb_news.git
       - WEB_NEED_NPM_REGISTRY=true
